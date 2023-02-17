@@ -29,7 +29,7 @@ button {
   background: var(--point);
   color: var(--text-white);
 }
-.cancle {
+.cancel {
   background: var(--modal-yellow);
   color: var(--text-black);
 }
