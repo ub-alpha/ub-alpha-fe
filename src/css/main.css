@@ -3,3 +3,7 @@
 
 @import "./reset.css";
 @import "./color.css";
+
+* {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
