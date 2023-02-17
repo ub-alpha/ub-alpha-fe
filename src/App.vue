@@ -3,7 +3,7 @@
 </template>
 
 <style>
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -130,5 +130,17 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+:root {
+  --backGround: #1c2e52;
+  --mainColor: #2561e6;
+  --subColor: #74a0fd;
+  --point: #fccd0f;
+  --point-dark: #f2ae0f;
+  --modal-white: #e3f4fd;
+  --text-white: #ffffff;
+  --text-black: #000000;
+  --text-grey: #898a8d;
+  --modal-yellow: #fdf3e7;
 }
 </style>
