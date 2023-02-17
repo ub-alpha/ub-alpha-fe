@@ -131,6 +131,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* 구글 웹폰트 추가*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap");
+/* 색상 변수 추가 */
 :root {
   --backGround: #1c2e52;
   --mainColor: #2561e6;
