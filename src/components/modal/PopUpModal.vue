@@ -1,7 +1,4 @@
 <template>
-  <!-- data-bs-toggle="modal"
-    data-bs-target="#exampleModal" -->
-  <button data-bs-toggle="modal" data-bs-target="#popUpModal">test</button>
   <div
     class="modal fade"
     id="popUpModal"
@@ -9,8 +6,6 @@
     aria-labelledby="popUpModalLabel"
     aria-hidden="true"
   >
-    <!-- data-bs-dismiss="modal"
-            aria-label="Close" -->
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
@@ -33,7 +28,7 @@
 import ConfrimBtn from "@/components/button/ConfrimBtn.vue";
 export default {
   methods: {},
-  components: {ConfrimBtn},
+  components: { ConfrimBtn },
 };
 </script>
 
