@@ -17,6 +17,7 @@ header {
   height: fit-content;
 }
 header img {
+  vertical-align: bottom;
   width: 100%;
 }
 </style>
