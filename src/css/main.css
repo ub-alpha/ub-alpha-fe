@@ -25,6 +25,13 @@ body {
 
   max-width: calc(320 / 568 * 1366px);
   max-height: calc(1366px);
+}
 
-  position: relative;
+.scroll {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
 }
