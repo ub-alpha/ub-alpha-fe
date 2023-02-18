@@ -25,6 +25,10 @@ body {
 
   max-width: calc(320 / 568 * 1366px);
   max-height: calc(1366px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .scroll {
