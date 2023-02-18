@@ -7,3 +7,24 @@
 * {
   font-family: "Noto Sans KR", sans-serif !important;
 }
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--backGround);
+}
+#app {
+  width: 100%;
+  height: calc(568 / 320 * 100vw);
+
+  min-width: calc(280px);
+  min-height: calc(568 / 320 * 280px);
+
+  max-width: calc(320 / 568 * 1366px);
+  max-height: calc(1366px);
+
+  position: relative;
+}
