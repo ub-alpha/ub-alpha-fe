@@ -1,6 +1,4 @@
 <template>
-  <!-- data-bs-toggle="modal"
-    data-bs-target="#exampleModal" -->
   <div
     class="modal fade"
     :id="`longModal-${modalName}`"
@@ -21,7 +19,9 @@
             <img :src="require('@/assets/close.svg')" alt="도움말 닫기" />
           </button>
         </div>
-        <div class="modal-body"></div>
+        <div class="modal-body">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -82,8 +82,7 @@ export default {
   width: 2.4rem;
 }
 .modal-body {
-  margin: 2.4rem 1rem 1rem;
-  background-color: var(--modal-yellow);
+  padding: 0;
   text-align: center;
 }
 </style>
