@@ -1,15 +1,14 @@
 <template>
   <!-- data-bs-toggle="modal"
     data-bs-target="#exampleModal" -->
-  <button data-bs-toggle="modal" data-bs-target="#longModal">test</button>
   <div
     class="modal fade"
-    id="longModal"
+    :id="`longModal-${modalName}`"
     tabindex="-1"
     aria-labelledby="longModalLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="header">
           <h1 class="title" id="longModalLabel">도움말</h1>
@@ -30,27 +29,36 @@
 
 <script>
 export default {
+  props: ["modalName"],
   methods: {},
 };
 </script>
 
 <style scoped>
+.modal {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 .modal-dialog {
+  margin: 0 auto;
   width: 100%;
   height: 100%;
-  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .modal-content {
-  width: 234px;
-  height: 418px;
+  width: calc(234 / 320 * 100%);
+  height: calc(418 / 568 * 100vh);
   text-align: center;
-  padding: 10px;
-  border-radius: 20px;
+  padding: calc(10 / 320 * 100%);
+  border-radius: 2rem;
   background-color: var(--backGround);
-  border: 2px solid var(--modal-yellow);
+  border: 0.2rem solid var(--modal-yellow);
   box-sizing: border-box;
   position: relative;
 
@@ -58,20 +66,23 @@ export default {
 }
 .modal-content .title {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 29px;
+  font-size: 2rem;
+  line-height: 2.9rem;
   color: var(--point);
-  margin-top: 24px;
-  padding-bottom: 11px;
-  border-bottom: 2px solid var(--modal-yellow);
+  margin-top: 2.4rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 0.2rem solid var(--modal-yellow);
 }
 .modal-content .close-btn {
   position: absolute;
-  right: 14px;
-  top: 14px;
+  right: 1.4rem;
+  top: 1.4rem;
+}
+.modal-content .close-btn img {
+  width: 2.4rem;
 }
 .modal-body {
-  margin: 24px 10px 10px;
+  margin: 2.4rem 1rem 1rem;
   background-color: var(--modal-yellow);
   text-align: center;
 }
