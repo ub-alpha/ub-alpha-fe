@@ -1,21 +1,17 @@
 <template>
   <div id="game">
-    <LongModal :modalName="'help'"></LongModal>
+    <HelpModal></HelpModal>
   </div>
 </template>
 
 <script>
-import LongModal from "@/components/modal/LongModal.vue";
+import HelpModal from "@/components/HelpModal.vue";
 export default {
-  components: { LongModal },
-
-  mounted() {
-    $("#longModal-help").modal("show");
-  },
+  components: { HelpModal },
 };
 </script>
 
-<style>
+<style scoped>
 #game {
   width: 100%;
   height: 100%;
