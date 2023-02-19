@@ -4,10 +4,19 @@ export default createStore({
   state: {
     member: {
       member_id: 0,
-      spacename: "",
+      spacename: "나만의",
       point: 0,
     },
-    planets: [],
+    planets: [
+      {
+        planet_id: 0,
+        image: "",
+      },
+      {
+        planet_id: 1,
+        image: "",
+      },
+    ],
   },
   getters: {},
   mutations: {
