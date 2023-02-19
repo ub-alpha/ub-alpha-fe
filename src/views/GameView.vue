@@ -1,13 +1,15 @@
 <template>
   <div id="game">
     <HelpModal></HelpModal>
+    <UserDataBar></UserDataBar>
   </div>
 </template>
 
 <script>
 import HelpModal from "@/components/HelpModal.vue";
+import UserDataBar from "@/components/UserDataBar.vue";
 export default {
-  components: { HelpModal },
+  components: { HelpModal, UserDataBar },
 };
 </script>
 
