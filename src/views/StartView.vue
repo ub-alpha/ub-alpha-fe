@@ -63,6 +63,9 @@ export default {
 
 <style scoped>
 #start {
+  width: 100%;
+  height: 100%;
+  position: relative;
   animation: change 0.4s ease-out;
 }
 @keyframes change {
