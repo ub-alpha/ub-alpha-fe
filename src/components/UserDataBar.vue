@@ -11,10 +11,11 @@
         />
       </button>
     </div>
-    <div class="item">
+
+    <router-link to="/mission" class="item">
       <strong class="point">{{ pointNum }}</strong>
       <img class="point" :src="require('@/assets/point.svg')" alt="포인트" />
-    </div>
+    </router-link>
   </div>
 </template>
 
