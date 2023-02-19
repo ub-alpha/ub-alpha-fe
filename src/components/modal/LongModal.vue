@@ -53,7 +53,7 @@ export default {
 }
 .modal-content {
   width: calc(234 / 320 * 100%);
-  height: calc(418 / 568 * 100vh);
+  height: calc(418 / 568 * 100%);
   text-align: center;
   padding: calc(10 / 320 * 100%);
   border-radius: 2rem;
@@ -84,5 +84,11 @@ export default {
 .modal-body {
   padding: 0;
   text-align: center;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 100%;
+  }
 }
 </style>
