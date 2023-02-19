@@ -38,7 +38,7 @@ export default {
   justify-content: space-between;
   padding: 2.3rem 2.2rem;
   width: 100%;
-  height: calc(70 / 568 * 100vh);
+  /* height: calc(70 / 568 * 100vh); */
 }
 .item {
   display: flex;
@@ -50,15 +50,20 @@ strong {
   font-weight: 700;
   font-size: 2rem;
 }
-
+span {
+  font-size: 1rem;
+}
 strong.point {
   color: var(--point);
 }
 
 img.help {
   width: 1.6rem;
+  vertical-align: bottom;
+  margin-top: 0.2rem;
 }
 img.point {
   width: 2.4rem;
+  vertical-align: bottom;
 }
 </style>
