@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import { uuid } from "vue-uuid";
+import {uuid} from "vue-uuid";
 import ShareListItem from "./ShareListItem.vue";
 export default {
-  components: { ShareListItem },
+  components: {ShareListItem},
   data() {
     return {
       socialList: [
@@ -54,13 +54,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .modal.fade .modal-dialog {
-  transform: translate3d(100px, 100px, 0);
+  transform: translate3d(24.5rem, 150%, 0);
 }
 
 .modal.show .modal-dialog {
-  transform: translate3d(100px, 50px, 0);
+  transform: translate3d(24.5rem, 25rem, 0);
 }
 .modal .modal-dialog {
   width: fit-content;
@@ -68,28 +68,17 @@ export default {
 }
 .modal-content {
   width: fit-content;
-  padding: 4px;
-  border-radius: 10px;
+  padding: 0.4rem;
+  border-radius: 1rem;
   box-sizing: border-box;
-  border: 1px solid var(--modal-white);
+  border: 0.1rem solid var(--modal-white);
   background-color: var(--backGround);
 }
 .social-list {
-  margin-bottom: 3px;
+  margin-bottom: 0.3rem;
 }
 .close-btn {
   width: 100%;
   height: fit-content;
-}
-@keyframes animateUp {
-  0% {
-    bottom: -500px;
-    opacity: 0;
-  }
-
-  100% {
-    bottom: 0;
-    opacity: 1;
-  }
 }
 </style>

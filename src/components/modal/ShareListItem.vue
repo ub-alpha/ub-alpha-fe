@@ -21,14 +21,14 @@ export default {
   margin: 0 auto;
 }
 .socialItem img {
-  width: 42px;
+  width: 4.2rem;
   display: block;
   margin: 0 auto 3px;
 }
 .socialItem strong {
   font-weight: 700;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: 1rem;
+  line-height: 1.4rem;
   color: var(--point);
 }
 </style>
