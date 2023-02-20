@@ -1,7 +1,7 @@
 <template>
   <SlideUpModal>
     <template v-if="step === 1">
-      <div class="content">
+      <div class="content step-1">
         <div class="name">
           <img :src="require('@/assets/planet_icon.png')" alt="행성 아이콘" />
           <span>행성을 할인권으로 교환하세요!</span>
@@ -11,7 +11,21 @@
           :src="require('@/assets/discount3000.png')"
           alt="금융투자상품권 3000원 할인권"
         />
-        <ExChangeBtn></ExChangeBtn>
+        <ExChangeBtn @click="nextStep"></ExChangeBtn>
+      </div>
+    </template>
+    <template v-else>
+      <div class="content step-2">
+        <div class="name">
+          <img :src="require('@/assets/planet_icon.png')" alt="행성 아이콘" />
+          <span>교환이 롼료되었습니다</span>
+        </div>
+        <div class="codeNum">
+          <span>할인권 번호:</span>
+          <span>GNYNNGP</span>
+          <span class="under">복사하기</span>
+        </div>
+        <ExChangeBtn @click="nextStep"></ExChangeBtn>
       </div>
     </template>
   </SlideUpModal>
@@ -27,6 +41,11 @@ export default {
     };
   },
   components: {SlideUpModal, ExChangeBtn},
+  methods: {
+    nextStep() {
+      this.step = 2;
+    },
+  },
 };
 </script>
 
@@ -36,8 +55,14 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1.4rem;
+
   color: var(--text-white);
+}
+.content.step-1 {
+  gap: 1.4rem;
+}
+.content.step-2 {
+  gap: 1.4rem;
 }
 .content .name {
   font-weight: 400;
@@ -49,5 +74,18 @@ export default {
 }
 .content img.coupon {
   width: calc(150 / 320 * 100%);
+}
+.content.step-2 .codeNum {
+  width: calc(245 / 320 * 100%);
+  padding: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+  color: var(--text-black);
+  background-color: #d7d1f2;
+}
+.content.step-2 .codeNum .under {
+  text-decoration: underline;
 }
 </style>
