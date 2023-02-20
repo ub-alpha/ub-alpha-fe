@@ -14,7 +14,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background: no-repeat top url("../assets/알파홈.png");
+  background: no-repeat top url("@/assets/알파홈.png");
   background-size: cover;
 }
 
