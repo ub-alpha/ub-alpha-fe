@@ -11,7 +11,7 @@
           :src="require('@/assets/discount3000.png')"
           alt="금융투자상품권 3000원 할인권"
         />
-        <ExChangeBtn @click="nextStep"></ExChangeBtn>
+        <ExChangeBtn @click="nextStep">교환하기</ExChangeBtn>
       </div>
     </template>
     <template v-else>
@@ -25,7 +25,7 @@
           <span>GNYNNGP</span>
           <span class="under">복사하기</span>
         </div>
-        <ExChangeBtn @click="nextStep"></ExChangeBtn>
+        <ExChangeBtn @click="gotoShop"> 상품권 구매히기 </ExChangeBtn>
       </div>
     </template>
   </SlideUpModal>
@@ -44,6 +44,10 @@ export default {
   methods: {
     nextStep() {
       this.step = 2;
+    },
+    gotoShop() {
+      $("#slideUpModal").modal("hide");
+      this.$router.push("/shop");
     },
   },
 };
@@ -84,6 +88,10 @@ export default {
   border-radius: 1rem;
   color: var(--text-black);
   background-color: #d7d1f2;
+}
+
+.content.step-2 button a {
+  color: var(--text-black);
 }
 .content.step-2 .codeNum .under {
   text-decoration: underline;

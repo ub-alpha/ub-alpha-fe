@@ -1,5 +1,7 @@
 <template>
-  <button>교환하기</button>
+  <button>
+    <slot></slot>
+  </button>
 </template>
 
 <script>
