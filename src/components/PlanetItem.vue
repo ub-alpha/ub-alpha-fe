@@ -29,6 +29,13 @@
         />
       </ve-progress>
     </div>
+    <button
+      @click="exchange"
+      v-if="planet.nowPoint == planet.maxPoint"
+      class="exchange"
+    >
+      교환하기
+    </button>
   </div>
 </template>
 
@@ -44,10 +51,14 @@ export default {
       border: 0,
     };
   },
-  watch() {},
   created() {
     this.stateBarWidth = ($("#app").innerWidth() * 250) / 320;
     this.border = parseInt($("html").css("fontSize")) * 0.8;
+  },
+  methods: {
+    exchange() {
+      const targetId = this.planet.planet_id;
+    },
   },
 };
 </script>
@@ -103,9 +114,16 @@ export default {
   align-items: center;
   justify-content: center;
 }
-#bg {
-  width: 100%;
-  background-color: red;
-  height: 100%;
+.exchange {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 5.5rem);
+  padding: 0.5rem 2.1rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  color: var(--backGround);
+  border-radius: 1rem;
+  background-color: var(--point);
 }
 </style>
