@@ -4,7 +4,7 @@
       <img :src="require('@/assets/exit.svg')" alt="행성 나가기 버튼" />
       <span>떠나기</span>
     </router-link>
-    <button class="level-up-wrap">
+    <button class="level-up-wrap" @click="levelUpSpace">
       <div class="level-up">
         <img :src="require('@/assets/level-up.svg')" alt="레벨업 버튼" />
       </div>
@@ -29,6 +29,16 @@
 import ShareList from "./modal/ShareList.vue";
 export default {
   components: {ShareList},
+
+  methods: {
+    levelUpSpace() {
+      let targetPlanetId = Number(
+        $(".planet.active.carousel-item")[0].dataset.planetid
+      );
+
+      this.$store.dispatch("ADD_POINT", targetPlanetId);
+    },
+  },
 };
 </script>
 
