@@ -14,13 +14,19 @@
         <span v-if="isAvailable" class="small"
           >이름은 다시 변경할 수 없으니 유의해주세요!</span
         >
-        <span v-else class="small error">스페이스 이름은 필수 입력입니다</span>
+        <span v-else class="small error">
+          <span v-if="userSpaceName.length > 10"
+            >10글자 이하로만 입력해주세요</span
+          >
+          <span v-else>스페이스 이름은 필수 입력입니다</span>
+        </span>
       </div>
       <div class="input-wrap">
         <input
+          @input="changeSpaceName"
+          :value="userSpaceName"
           @keyup.enter="checkSpaceName"
           type="text"
-          v-model="userSpaceName"
         />
         <NextBtn @click="checkSpaceName" :msg="'입력'"></NextBtn>
       </div>
@@ -31,7 +37,7 @@
 <script>
 import NextBtn from "@/components/button/NextBtn.vue";
 export default {
-  components: { NextBtn },
+  components: {NextBtn},
   data() {
     return {
       step: 1,
@@ -43,6 +49,8 @@ export default {
     userSpaceName() {
       if (this.userSpaceName === "") {
         this.isAvailable = false;
+      } else if (this.userSpaceName.length > 10) {
+        this.isAvailable = false;
       } else {
         this.isAvailable = true;
       }
@@ -51,6 +59,9 @@ export default {
   methods: {
     nextStep() {
       this.step = 2;
+    },
+    changeSpaceName(event) {
+      this.userSpaceName = event.target.value;
     },
     checkSpaceName() {
       if (this.isAvailable) {
