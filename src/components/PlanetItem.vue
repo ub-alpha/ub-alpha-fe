@@ -1,13 +1,25 @@
 <template>
-  <div :class="`planet ${index === 0 ? 'active' : ''} carousel-item`">
-    <div class="circle-wrap">
+  <div
+    :data-planetid="planet.planet_id"
+    :class="`planet ${index === 0 ? `active` : ''} carousel-item`"
+  >
+    <div
+      :class="`circle-wrap ${planet.nowPoint == planet.maxPoint ? 'max' : ''}`"
+    >
+      <template v-if="planet.nowPoint != planet.maxPoint">
+        <div class="point-num">{{ planet.nowPoint }}/{{ planet.maxPoint }}</div>
+      </template>
+      <template v-else>
+        <div class="point-num">MAX</div>
+      </template>
       <ve-progress
+        :process="[-100, 100]"
         id="#point-state-bar"
         color="#E3F4FD"
         empty-color="#394F7D"
         :thickness="border"
         :empty-thickness="`${border}`"
-        :progress="70"
+        :progress="(planet.nowPoint / planet.maxPoint) * 100"
         :size="stateBarWidth"
       >
         <img
@@ -55,8 +67,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  color: var(--modal-white);
+  font-weight: 900;
+  font-size: 2.7rem;
+}
+.circle-wrap.max {
+  opacity: 0.5;
+}
+.circle-wrap .point-num {
+  margin-bottom: 1rem;
 }
 .circle-wrap img {
   display: block;
