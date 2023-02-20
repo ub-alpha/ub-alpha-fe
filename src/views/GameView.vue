@@ -4,6 +4,7 @@
     <UserDataBar></UserDataBar>
     <PlanetList></PlanetList>
     <BottomNav></BottomNav>
+    <ExchangeModalVue></ExchangeModalVue>
   </div>
 </template>
 
@@ -12,8 +13,9 @@ import HelpModal from "@/components/HelpModal.vue";
 import UserDataBar from "@/components/UserDataBar.vue";
 import PlanetList from "@/components/PlanetList.vue";
 import BottomNav from "@/components/BottomNav.vue";
+import ExchangeModalVue from "@/components/ExchangeModalVue.vue";
 export default {
-  components: {HelpModal, UserDataBar, PlanetList, BottomNav},
+  components: {HelpModal, UserDataBar, PlanetList, BottomNav, ExchangeModalVue},
 };
 </script>
 

@@ -29,7 +29,10 @@
         />
       </ve-progress>
     </div>
+
     <button
+      data-bs-toggle="modal"
+      data-bs-target="#slideUpModal"
       @click="exchange"
       v-if="planet.nowPoint == planet.maxPoint"
       class="exchange"
