@@ -12,7 +12,6 @@
           :key="planet.planet_id"
           :planet="planet"
         ></PlanetItem>
-        <!-- todo 행성 생성 컴포넌트 추가 -->
         <AddPlanetItem
           :class="`${planets.length == 0 ? 'active' : ''}`"
         ></AddPlanetItem>
