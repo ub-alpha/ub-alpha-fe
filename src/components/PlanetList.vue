@@ -7,38 +7,41 @@
     >
       <div class="carousel-inner">
         <PlanetItem
-          v-for="planet in planets"
+          v-for="(planet, index) in planets"
+          :index="index"
           :key="planet.planet_id"
           :planet="planet"
         ></PlanetItem>
         <!-- todo 행성 생성 컴포넌트 추가 -->
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <AddPlanetItem></AddPlanetItem>
       </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import PlanetItem from "@/components/PlanetItem.vue";
+import AddPlanetItem from "./AddPlanetItem.vue";
 export default {
-  components: {PlanetItem},
+  components: {PlanetItem, AddPlanetItem},
   computed: {
     planets() {
       return this.$store.state.planets;
