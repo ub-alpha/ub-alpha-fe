@@ -58,7 +58,7 @@ export default {
 #planet-list {
   width: 100%;
   padding-bottom: 100%;
-  margin: 5.2rem 0 3.9rem;
+  margin: 1rem 0 3.9rem;
   position: relative;
 }
 .carousel.slide {
