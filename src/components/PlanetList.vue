@@ -3,7 +3,7 @@
     <div
       id="carouselExampleControls"
       class="carousel slide"
-      data-bs-ride="carousel"
+      data-bs-ride="false"
     >
       <div class="carousel-inner">
         <PlanetItem
@@ -38,7 +38,7 @@
 <script>
 import PlanetItem from "@/components/PlanetItem.vue";
 export default {
-  components: { PlanetItem },
+  components: {PlanetItem},
   computed: {
     planets() {
       return this.$store.state.planets;
