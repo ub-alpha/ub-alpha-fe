@@ -3,6 +3,7 @@
     <HelpModal></HelpModal>
     <UserDataBar></UserDataBar>
     <PlanetList></PlanetList>
+    <BottomNav></BottomNav>
   </div>
 </template>
 
@@ -10,8 +11,9 @@
 import HelpModal from "@/components/HelpModal.vue";
 import UserDataBar from "@/components/UserDataBar.vue";
 import PlanetList from "@/components/PlanetList.vue";
+import BottomNav from "@/components/BottomNav.vue";
 export default {
-  components: { HelpModal, UserDataBar, PlanetList },
+  components: {HelpModal, UserDataBar, PlanetList, BottomNav},
 };
 </script>
 
