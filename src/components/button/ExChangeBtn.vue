@@ -10,11 +10,11 @@ export default {};
 button {
   color: var(--text-white);
   background-color: var(--mainColor);
-  padding: 5px 41px;
+  padding: 0.5rem 4.1rem;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 1rem;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 17px;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
 }
 </style>
