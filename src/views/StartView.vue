@@ -65,8 +65,11 @@ export default {
     },
     checkSpaceName() {
       if (this.isAvailable) {
-        this.$store.dispatch("MAKE_SPACE", this.userSpaceName);
-        this.$router.push("/game");
+        this.$store.dispatch("MAKE_SPACE", this.userSpaceName).then((res) => {
+          if (res.spacename) {
+            this.$router.push("/game");
+          }
+        });
       }
     },
   },
