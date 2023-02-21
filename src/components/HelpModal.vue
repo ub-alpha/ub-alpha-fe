@@ -43,7 +43,7 @@
 <script>
 import LongModal from "@/components/modal/LongModal.vue";
 export default {
-  components: { LongModal },
+  components: {LongModal},
 
   mounted() {
     $("#longModal-help").modal("show");
@@ -59,6 +59,8 @@ export default {
   justify-content: space-around;
   flex-direction: column;
   height: 100%;
+  gap: 3.7rem;
+  margin: 2.3rem 0 1rem;
 }
 .summary {
   display: flex;
