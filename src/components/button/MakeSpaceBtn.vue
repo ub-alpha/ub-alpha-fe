@@ -21,12 +21,12 @@ export default {
 
 <style scoped>
 button {
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  line-height: 17px;
+  line-height: 1.7rem;
   box-sizing: content-box;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 .full {
   color: var(--text-white);
