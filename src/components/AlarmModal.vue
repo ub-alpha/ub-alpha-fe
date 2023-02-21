@@ -72,7 +72,7 @@ export default {
     font-size: 1.3rem;
     line-height: 1.9rem;
     text-align: center;
-    color: #CBCED8;
+    color: var(--text-grey);
 }
 
 .modal-body .content {
