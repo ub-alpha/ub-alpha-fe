@@ -1,7 +1,12 @@
 <template>
   <div class="planet carousel-item">
     <div class="circle-wrap">
-      <img :src="require('@/assets/add-space.svg')" alt="행성 생성하기" />
+      <img
+        data-bs-toggle="modal"
+        data-bs-target="#longModal-add"
+        :src="require('@/assets/add-space.svg')"
+        alt="행성 생성하기"
+      />
     </div>
   </div>
 </template>

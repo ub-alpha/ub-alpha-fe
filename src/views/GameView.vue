@@ -5,6 +5,7 @@
     <PlanetList></PlanetList>
     <BottomNav></BottomNav>
     <ExchangeModalVue></ExchangeModalVue>
+    <AddSpaceModal></AddSpaceModal>
   </div>
 </template>
 
@@ -14,8 +15,16 @@ import UserDataBar from "@/components/UserDataBar.vue";
 import PlanetList from "@/components/PlanetList.vue";
 import BottomNav from "@/components/BottomNav.vue";
 import ExchangeModalVue from "@/components/ExchangeModalVue.vue";
+import AddSpaceModal from "@/components/AddSpaceModal.vue";
 export default {
-  components: {HelpModal, UserDataBar, PlanetList, BottomNav, ExchangeModalVue},
+  components: {
+    HelpModal,
+    UserDataBar,
+    PlanetList,
+    BottomNav,
+    ExchangeModalVue,
+    AddSpaceModal,
+  },
 };
 </script>
 
