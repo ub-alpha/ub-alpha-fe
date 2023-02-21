@@ -9,7 +9,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="header">
-          <h1 class="title" id="longModalLabel">도움말</h1>
+          <h1 class="title" id="longModalLabel">{{ modalType[modalName] }}</h1>
           <button
             class="close-btn"
             type="button"
@@ -30,6 +30,14 @@
 <script>
 export default {
   props: ["modalName"],
+  data() {
+    return {
+      modalType: {
+        help: "도움말",
+        add: "행성 선택",
+      },
+    };
+  },
   methods: {},
 };
 </script>
