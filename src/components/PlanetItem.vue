@@ -1,8 +1,5 @@
 <template>
-  <div
-    :data-planetid="planet.planet_id"
-    :class="`planet ${index === 0 ? `active` : ''} carousel-item`"
-  >
+  <div :class="`planet ${index === 0 ? `active` : ''} carousel-item`">
     <div
       :class="`circle-wrap ${planet.nowPoint == planet.maxPoint ? 'max' : ''}`"
     >
@@ -29,6 +26,7 @@
         />
       </ve-progress>
     </div>
+    <LevelUpBtn :planet="planet"></LevelUpBtn>
 
     <button
       data-bs-toggle="modal"
@@ -44,10 +42,11 @@
 
 <script>
 import {veProgress} from "vue-ellipse-progress";
+import LevelUpBtn from "./button/LevelUpBtn.vue";
 
 export default {
   props: ["planet", "index"],
-  components: {veProgress},
+  components: {veProgress, LevelUpBtn},
   data() {
     return {
       stateBarWidth: 0,

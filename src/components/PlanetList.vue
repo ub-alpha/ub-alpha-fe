@@ -68,5 +68,6 @@ export default {
 
 .carousel-inner {
   height: 100%;
+  overflow: visible;
 }
 </style>
