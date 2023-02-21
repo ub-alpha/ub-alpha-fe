@@ -2,10 +2,10 @@
     <div class="mission">
         <div class="mission-with-point">
             <div class="mission-point">
-                <strong class="point">10</strong>
+                <strong class="point">{{ mission.point }}</strong>
                 <img class="point" :src="require('@/assets/point.svg')" alt="포인트" />
             </div>
-            <span class="mission-content">계좌 개설하기</span>
+            <span class="mission-content">{{ mission.mission }}</span>
         </div>
         <on-off-btn btnMsg="보상받기"></on-off-btn>
     </div>
@@ -14,6 +14,9 @@
 <script>
 import OnOffBtn from './button/OnOffBtn.vue'
 export default {
+    props: [
+        'mission',
+    ],
     components: { OnOffBtn },
 
 }
