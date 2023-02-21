@@ -7,7 +7,7 @@
             </div>
             <span class="mission-content">{{ mission.mission }}</span>
         </div>
-        <on-off-btn btnMsg="보상받기"></on-off-btn>
+        <on-off-btn :status="mission.status"></on-off-btn>
     </div>
 </template>
 

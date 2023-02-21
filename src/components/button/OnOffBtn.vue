@@ -1,29 +1,24 @@
 <template>
-  <button @click="changeState" :class="`${btnSet[btnMsg]} ${this.state}`">
-    {{ btnMsg }}
+  <button @click="changeState" :class="`${status}`">
+    {{ btnSet[status] }}
   </button>
 </template>
 
 <script>
 export default {
-  props: ["btnMsg"],
+  props: ["status"],
   data() {
     return {
-      state: "off",
       btnSet: {
-        보상받기: "getReward",
-        바로가기: "goToReward",
+        done: "보상받기",
+        notready: "바로가기",
+        ready: "보상받기",
       },
     };
   },
   methods: {
     changeState() {
-      if (this.state === "on") {
-        this.state = "off";
-      } else {
-        this.state = "on";
-      }
-    },
+    }
   },
 };
 </script>
@@ -37,15 +32,15 @@ button {
   box-sizing: content-box;
   border-radius: 10px;
 }
-.getReward {
+.done {
   color: var(--text-white);
-
   background-color: var(--text-grey);
 }
-.getReward.on {
+.ready {
+  color: var(--text-white);
   background-color: var(--mainColor);
 }
-.goToReward {
+.notready {
   border: 1px solid var(--mainColor);
   color: var(--mainColor);
 }

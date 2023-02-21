@@ -28,59 +28,73 @@ export default {
             welcome: [{
                 point: 10,
                 mission: "계좌 개설",
+                status: "notready",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "ready",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             ],
             daily: [{
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             {
                 point: 10,
                 mission: "계좌 개설",
+                status: "done",
             },
             ],
             dailyMission: "데일리 미션",
