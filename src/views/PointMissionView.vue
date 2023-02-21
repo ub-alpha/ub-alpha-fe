@@ -1,7 +1,15 @@
-<template></template>
+<template>
+    <point-title-bar></point-title-bar>
+</template>
 
 <script>
-export default {};
+import PointTitleBar from '@/components/PointTitleBar.vue';
+export default {
+    components: {
+        PointTitleBar,
+    }
+};
 </script>
 
-<style></style>
+<style>
+</style>
