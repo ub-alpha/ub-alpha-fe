@@ -25,6 +25,12 @@ export default {
     ExchangeModalVue,
     AddSpaceModal,
   },
+  mounted() {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      this.$store.dispatch("GET_MEMBER");
+    }
+  },
 };
 </script>
 
