@@ -1,16 +1,14 @@
 <template>
     <div class="category-bar">
-        <strong class="category">웰컴 미션</strong>
+        <strong class="category">{{ category }}</strong>
     </div>
 </template>
 
 <script>
 export default {
-    computed: {
-        category(category) {
-            return category === "welcome" ? "웰컴 미션" : "데일리 미션"
-        }
-    }
+    props: [
+        "category",
+    ],
 }
 </script>
 
