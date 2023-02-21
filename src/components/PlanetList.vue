@@ -9,7 +9,7 @@
         <PlanetItem
           v-for="(planet, index) in planets"
           :index="index"
-          :key="planet.planet_id"
+          :key="planet.id"
           :planet="planet"
         ></PlanetItem>
         <AddPlanetItem

@@ -7,10 +7,10 @@
     <template v-if="step === 1">
       <div class="msg">생성하고 싶은 행성을 선택하세요 !</div>
       <div class="space-imgs">
-        <template v-for="spaceType in spaceTypeList" :key="spaceType.planet_id">
+        <template v-for="spaceType in spaceTypeList" :key="spaceType.id">
           <div
             :class="`item ${
-              selectedSpace?.planet_id === spaceType.planet_id ? 'select' : ''
+              selectedSpace?.id === spaceType.id ? 'select' : ''
             }`"
             @click="selectSpace(spaceType)"
           >
@@ -103,9 +103,13 @@ export default {
       return this.$store.state.rewardTypes;
     },
   },
-  mounted() {
-    this.selectedSpace = this.spaceTypeList[0];
-    this.selectedReward = this.rewardTypeList[0];
+  created() {
+    this.$store.dispatch("GET_PLANET_LIST").then((res) => {
+      this.selectedSpace = res[0];
+    });
+    this.$store.dispatch("GET_REWARD_LIST").then((res) => {
+      this.selectedReward = this.rewardTypeList[0];
+    });
   },
   methods: {
     selectSpace(spaceType) {

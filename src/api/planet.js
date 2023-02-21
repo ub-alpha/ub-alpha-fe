@@ -1,19 +1,25 @@
 import axios from "axios";
 // GET 행성 목록 조회 /planet/
-export async function get_planet_types() {
+export async function get_planet_list() {
   const {data} = await axios({
     url: `${process.env.VUE_APP_API_URL}/planet`,
     method: "GET",
   });
   return data;
 }
-
+// GET 행성 특성 목록 조회 /character
+export async function get_reward_list() {
+  const {data} = await axios({
+    url: `${process.env.VUE_APP_API_URL}/character`,
+    method: "GET",
+    headers: {
+      Authorization: `JWT ${localStorage.getItem("access_token")}`,
+    },
+  });
+  return data;
+}
 // POST 새로운 행성 생성 /planet/detail
 export async function add_new_planet(payload) {
-  // {
-  //     "planet": 1,
-  //     "character": 1,
-  // }
   const {data} = await axios({
     url: `${process.env.VUE_APP_API_URL}/planet/detail`,
     method: "POST",
@@ -21,7 +27,7 @@ export async function add_new_planet(payload) {
       Authorization: `JWT ${localStorage.getItem("access_token")}`,
       "Content-type": "application/json",
     },
-    data: {},
+    data: {...payload},
   });
   return data;
 }
