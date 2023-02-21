@@ -1,13 +1,43 @@
 <template>
   <div id="home">
-    <router-link to="/start" class="space-btn">
+    <button @click="gotoGame()" class="space-btn">
       <img src="@/assets/planet_icon.png" alt="행성 아이콘" />
       <strong>나만의 행성</strong>
-    </router-link>
+    </button>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  computed: {
+    member() {
+      return this.$store.state.member;
+    },
+  },
+  methods: {
+    gotoGame() {
+      const token = localStorage.getItem("access_token");
+      if (token) {
+        this.$store.dispatch("GET_MEMBER").then((res) => {
+          if (this.member.spacename != null) {
+            this.$router.push("/game");
+          } else {
+            this.$router.push("/start");
+          }
+        });
+      } else {
+        this.$router.push("/login");
+      }
+    },
+  },
+  created() {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      this.$store.dispatch("GET_MEMBER");
+    }
+  },
+};
+</script>
 
 <style scoped>
 #home {
