@@ -1,7 +1,7 @@
 <template>
   <div
     class="modal fade"
-    :id="`longModal-${modalName}`"
+    :id="`longModalDepth-${modalName}`"
     tabindex="-1"
     aria-labelledby="longModalLabel"
     aria-hidden="true"

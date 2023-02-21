@@ -16,7 +16,7 @@
               data-bs-dismiss="modal"
               aria-label="Close"
             ></ConfrimBtn>
-            <ConfrimBtn :btn-msg="'확인'"></ConfrimBtn>
+            <ConfrimBtn @click="makePlanet" :btn-msg="'확인'"></ConfrimBtn>
           </div>
         </div>
       </div>
@@ -27,8 +27,15 @@
 <script>
 import ConfrimBtn from "@/components/button/ConfrimBtn.vue";
 export default {
-  methods: {},
-  components: { ConfrimBtn },
+  props: ["selectedSpace", "selectedReward"],
+  components: {ConfrimBtn},
+  methods: {
+    makePlanet() {
+      $("#popUpModal").modal("hide");
+      $("#longModalDepth-add").modal("hide");
+      // todo - 행성 생성 api호출
+    },
+  },
 };
 </script>
 

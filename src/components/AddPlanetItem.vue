@@ -3,7 +3,7 @@
     <div class="circle-wrap">
       <img
         data-bs-toggle="modal"
-        data-bs-target="#longModal-add"
+        data-bs-target="#longModalDepth-add"
         :src="require('@/assets/add-space.svg')"
         alt="행성 생성하기"
       />

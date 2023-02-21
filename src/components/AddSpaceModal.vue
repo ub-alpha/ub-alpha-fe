@@ -52,15 +52,23 @@
       </div>
       <div class="btn-list">
         <MakeSpaceBtn @click="resetStep(1)" :btnMsg="'돌아가기'"></MakeSpaceBtn>
-        <MakeSpaceBtn :btn-msg="'생성하기'"></MakeSpaceBtn>
+        <MakeSpaceBtn
+          @click="confirmModalOpen"
+          :btn-msg="'생성하기'"
+        ></MakeSpaceBtn>
       </div>
     </template>
   </LongModalDepth>
+  <PopUpModal
+    :selectedSpace="selectedSpace"
+    :selectedReward="selectedReward"
+  ></PopUpModal>
 </template>
 
 <script>
 import LongModalDepth from "@/components/modal/LongModalDepth.vue";
 import MakeSpaceBtn from "@/components/button/MakeSpaceBtn.vue";
+import PopUpModal from "./modal/PopUpModal.vue";
 export default {
   data() {
     return {
@@ -70,7 +78,7 @@ export default {
       isAvailable: false,
     };
   },
-  components: {LongModalDepth, MakeSpaceBtn},
+  components: {LongModalDepth, MakeSpaceBtn, PopUpModal},
   watch: {
     selectedSpace(newData) {
       if (newData == null) {
@@ -113,7 +121,6 @@ export default {
       } else {
         this.selectedReward = rewardType;
       }
-      console.log(this.selectedReward);
     },
     nextStep() {
       if (this.selectedSpace != null) {
@@ -124,6 +131,12 @@ export default {
     },
     resetStep(num) {
       this.step = num;
+    },
+    confirmModalOpen() {
+      if (this.isAvailable) {
+        $("#popUpModal").modal("show");
+      } else {
+      }
     },
   },
 };
@@ -172,7 +185,6 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1.4rem;
   color: var(--point);
   margin-top: 1rem;
 }
