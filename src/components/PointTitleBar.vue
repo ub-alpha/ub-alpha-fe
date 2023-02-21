@@ -21,7 +21,7 @@ export default {};
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2.3rem 2.2rem;
+    padding: 1.3rem 1.2rem;
     width: 100%;
     flex-direction: row;
 }
