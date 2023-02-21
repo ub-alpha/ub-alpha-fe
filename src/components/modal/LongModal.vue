@@ -61,7 +61,6 @@ export default {
 }
 .modal-content {
   width: calc(234 / 320 * 100%);
-  height: calc(418 / 568 * 100%);
   text-align: center;
   padding: calc(10 / 320 * 100%);
   border-radius: 2rem;
