@@ -12,21 +12,12 @@ export default {
   },
   methods: {
     login() {
-      const userData = {
-        username: "username",
-        password: "password",
-      };
-      fetch("/token", {
-        method: "POST",
-        body: JSON.stringify(userData),
-        headers: {
-          "Content-type": "application/json",
-        },
-      })
-        .then((response) => response.json())
-        .then((response) => {
-          console.log(response.data);
-        });
+      this.$store.dispatch("GET_TOKEN").then((res) => {
+        if (res) {
+          localStorage.setItem("access_token", res.access);
+          this.$router.push("/");
+        }
+      });
     },
   },
 };
