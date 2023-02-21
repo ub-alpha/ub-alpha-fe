@@ -29,10 +29,6 @@
 import LongModal from "@/components/modal/LongModal.vue";
 export default {
   components: {LongModal},
-
-  mounted() {
-    $("#longModal-help").modal("show");
-  },
 };
 </script>
 
