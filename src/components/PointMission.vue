@@ -71,6 +71,6 @@ img.point {
     line-height: 1.7rem;
     display: flex;
     align-items: center;
-    color: #FFFFFF;
+    color: var(--text-white);
 }
 </style>

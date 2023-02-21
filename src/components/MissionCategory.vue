@@ -19,11 +19,9 @@ export default {
     margin-bottom: 0.2rem;
 }
 .category {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 2.2rem;
-    color: #FFFFFF;
+    color: var(--text-white);
 }
 </style>
