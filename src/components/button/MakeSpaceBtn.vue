@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       btnSet: {
+        선택하기: "full",
         생성하기: "full",
         돌아가기: " border",
       },
