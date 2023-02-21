@@ -1,5 +1,5 @@
 <template>
-  <LongModal :modalName="'help'">
+  <LongModal :modalName="'help'" :title="'도움말'">
     <div class="text-content">
       <div class="text">
         <div class="summary">
