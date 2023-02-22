@@ -11,7 +11,6 @@
       <on-off-btn :status="mission.status"></on-off-btn>
     </router-link>
   </div>
-  <on-off-btn :status="mission.status"></on-off-btn>
 </template>
 
 <script>
