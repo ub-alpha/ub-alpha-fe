@@ -7,9 +7,7 @@
       </div>
       <span class="mission-content">{{ mission.mission }}</span>
     </div>
-    <router-link to="/">
-      <on-off-btn :status="mission.status"></on-off-btn>
-    </router-link>
+    <on-off-btn :status="mission.status" @click="doMission"></on-off-btn>
   </div>
 </template>
 
@@ -18,6 +16,17 @@ import OnOffBtn from "./button/OnOffBtn.vue";
 export default {
   props: ["mission"],
   components: {OnOffBtn},
+  methods: {
+    doMission() {
+      if (this.mission.status === "notready"){
+        this.$router.push('/');
+      } else if (this.mission.status === "ready") {
+        this.$store.dispatch("DONE_MISSION", this.mission.log_id).then((res) => {
+          this.$router.go()
+        })
+      }
+    }
+  }
 };
 </script>
 

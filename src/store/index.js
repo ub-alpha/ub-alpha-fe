@@ -9,6 +9,7 @@ import {
   add_new_planet,
   add_planet_point,
   get_mission,
+  get_point,
 } from "../api/index.js";
 export default createStore({
   state: {
@@ -126,6 +127,12 @@ export default createStore({
         return res;
       });
     },
+    // 미션 수행 완료
+    async DONE_MISSION(context, id) {
+      return get_point(id).then((res) => {
+        return res;
+      })
+    }
   },
   modules: {},
 });
