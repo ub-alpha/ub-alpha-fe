@@ -31,7 +31,6 @@ export default {
   },
   computed: {
     welcome() {
-      console.log(this.$store.state.missions.welcome);
       return this.$store.state.missions.welcome;
     },
     daily() {
