@@ -31,9 +31,9 @@
     <button
       data-bs-toggle="modal"
       data-bs-target="#slideUpModal"
-      @click="exchange"
       v-if="planet.point == planet.max_point"
       class="exchange"
+      @click="saveTargetId"
     >
       교환하기
     </button>
@@ -58,8 +58,12 @@ export default {
     this.border = parseInt($("html").css("fontSize")) * 0.8;
   },
   methods: {
-    exchange() {
-      const targetId = this.planet.id;
+    saveTargetId() {
+      const data = {
+        id: this.planet.id,
+        rewardImg: this.planet.character_img,
+      };
+      this.$store.dispatch("SAVE_TARGET", data);
     },
   },
 };
