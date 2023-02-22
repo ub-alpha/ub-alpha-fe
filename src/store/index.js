@@ -8,6 +8,7 @@ import {
   get_reward_list,
   add_new_planet,
   add_planet_point,
+  get_mission,
 } from "../api/index.js";
 export default createStore({
   state: {
@@ -18,6 +19,7 @@ export default createStore({
     planetTypes: [],
     rewardTypes: [],
     planets: [],
+    missions: {},
   },
   mutations: {
     SET_MEMBER(state, member) {
@@ -43,8 +45,27 @@ export default createStore({
     SET_REWARD_TYPES(state, list) {
       state.rewardTypes = list;
     },
+    SET_MISSIONS(state, list) {
+      const daily = list.filter((mission) => {
+        return mission.category === "daily";
+      });
+      const welcome = list.filter((mission) => {
+        return mission.category === "welcome";
+      });
+      state.missions.daily = daily;
+      state.missions.welcome = welcome;
+    },
+    SET_TARGET_ID(state, data) {
+      state.targetId = data.id;
+
+      state.targetImg = data.rewardImg;
+    },
   },
   actions: {
+    // - 교환하기를 누른 행성의 data set
+    SAVE_TARGET(context, data) {
+      context.commit("SET_TARGET_ID", data);
+    },
     // -로그인
     async GET_TOKEN(context) {
       return login();
@@ -59,7 +80,6 @@ export default createStore({
     // -사용자 보유 행성 조회
     async GET_PLANETS(context) {
       return get_member_planets().then((res) => {
-        console.log(res);
         context.commit("SET_PLANETS", res);
       });
     },
@@ -92,6 +112,18 @@ export default createStore({
     async ADD_POINT(context, id) {
       return add_planet_point(id).then((res) => {
         context.commit("SET_POINT", id);
+      });
+    },
+    // - 미션 목록 조회
+    async GET_MISSION(context) {
+      return get_mission().then((res) => {
+        context.commit("SET_MISSIONS", res);
+      });
+    },
+    // 교환권 교환
+    async EXCHANGE_PLANET(context, id) {
+      return exchange_planet(id).then((res) => {
+        return res;
       });
     },
   },
