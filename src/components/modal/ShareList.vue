@@ -55,16 +55,24 @@ export default {
 </script>
 
 <style scoped>
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .modal.fade .modal-dialog {
-  transform: translate3d(24.5rem, 150%, 0);
+  transform: translate3d(-1rem, 0, 0);
 }
 
 .modal.show .modal-dialog {
-  transform: translate3d(24.5rem, 25rem, 0);
+  transform: translate3d(-1rem, -10rem, 0);
 }
 .modal .modal-dialog {
   width: fit-content;
   margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .modal-content {
   width: fit-content;
@@ -75,6 +83,9 @@ export default {
   background-color: var(--backGround);
 }
 .social-list {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
   margin-bottom: 0.3rem;
 }
 .close-btn {
