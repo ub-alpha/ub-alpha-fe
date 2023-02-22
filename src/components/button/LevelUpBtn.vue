@@ -63,4 +63,7 @@ export default {
   background-color: var(--modal-white);
   border-radius: 1rem;
 }
+.level-up img {
+  width: 2rem;
+}
 </style>
