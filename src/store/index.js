@@ -7,6 +7,7 @@ import {
   get_planet_list,
   get_reward_list,
   add_new_planet,
+  add_planet_point,
 } from "../api/index.js";
 export default createStore({
   state: {
@@ -29,13 +30,12 @@ export default createStore({
       state.planets = planets;
     },
     SET_POINT(state, id) {
-      const target = state.planets.filter(
-        (planet) => planet.planet_id == id
-      )[0];
+      const target = state.planets.filter((planet) => planet.id == id)[0];
 
-      if (target.maxPoint > target.nowPoint) {
-        target.nowPoint += 10;
+      if (target.max_point > target.point) {
+        target.point += 10;
       }
+      state.member.point -= 10;
     },
     SET_PLANET_TYPES(state, list) {
       state.planetTypes = list;
@@ -84,15 +84,15 @@ export default createStore({
         return res;
       });
     },
-    // 새로운 행성 생성
+    // - 새로운 행성 생성
     async ADD_PLANET(context, payload) {
-      return add_new_planet(payload).then((res) => {
-        console.log(res);
-      });
+      return add_new_planet(payload).then((res) => {});
     },
-    // 행성 레벨업을 위한 포인트 +10
-    ADD_POINT(context, id) {
-      context.commit("SET_POINT", id);
+    // - 행성 레벨업을 위한 포인트 +10
+    async ADD_POINT(context, id) {
+      return add_planet_point(id).then((res) => {
+        context.commit("SET_POINT", id);
+      });
     },
   },
   modules: {},

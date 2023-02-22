@@ -23,7 +23,7 @@ export default {
 
   methods: {
     levelUpSpace() {
-      this.$store.dispatch("ADD_POINT", this.planet.id);
+      this.$store.dispatch("ADD_POINT", this.planet.id).then(() => {});
     },
   },
 };
