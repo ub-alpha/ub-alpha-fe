@@ -29,7 +29,11 @@ export default {
     const token = localStorage.getItem("access_token");
     if (token) {
       this.$store.dispatch("GET_MEMBER").then(() => {
-        this.$store.dispatch("GET_PLANETS");
+        this.$store.dispatch("GET_PLANETS").then((res) => {
+          if (res.length == 0) {
+            $("#longModal-help").modal("show");
+          }
+        });
       });
     }
   },
