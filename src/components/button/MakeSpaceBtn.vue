@@ -12,7 +12,7 @@ export default {
       btnSet: {
         선택하기: "full",
         생성하기: "full",
-        돌아가기: " border",
+        뒤로가기: "line",
       },
     };
   },
@@ -34,8 +34,8 @@ button {
   background-color: var(--mainColor);
 }
 
-.border {
-  border: 0.1rem solid var(--mainColor);
-  color: var(--mainColor);
+.line {
+  border: 0.2rem solid var(--text-white);
+  color: var(--text-white);
 }
 </style>

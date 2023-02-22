@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="btn-list">
-        <MakeSpaceBtn @click="resetStep(1)" :btnMsg="'돌아가기'"></MakeSpaceBtn>
+        <MakeSpaceBtn @click="resetStep(1)" :btnMsg="'뒤로가기'"></MakeSpaceBtn>
         <MakeSpaceBtn
           @click="confirmModalOpen"
           :btn-msg="'생성하기'"
