@@ -2,6 +2,7 @@
   <div class="planet carousel-item">
     <div class="circle-wrap">
       <img
+        class="add_planet"
         data-bs-toggle="modal"
         data-bs-target="#longModalDepth-add"
         :src="require('@/assets/add-space.svg')"
@@ -32,5 +33,8 @@ export default {
   display: block;
   margin: 0 auto;
   width: calc(250 / 320 * 100%);
+}
+.add_planet {
+  cursor: pointer;
 }
 </style>

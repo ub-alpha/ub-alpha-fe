@@ -19,7 +19,7 @@
       <div class="content step-2">
         <div class="name">
           <img :src="require('@/assets/planet_icon.png')" alt="행성 아이콘" />
-          <span>교환이 롼료되었습니다</span>
+          <span>교환이 완료되었습니다</span>
         </div>
         <div class="codeNum">
           <span>할인권 번호:</span>
@@ -90,7 +90,7 @@ export default {
 }
 .content .name {
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.6rem;
 }
 .content .name img {
@@ -108,6 +108,9 @@ export default {
   border-radius: 1rem;
   color: var(--text-black);
   background-color: #d7d1f2;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
 }
 
 .content.step-2 button a {
@@ -115,6 +118,7 @@ export default {
 }
 .content.step-2 .codeNum .under {
   text-decoration: underline;
+  cursor: pointer;
 }
 .content.step-2 .codeNum #code {
   width: 30%;
