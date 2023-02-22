@@ -1,12 +1,15 @@
 <template>
-  <div id="shop"></div>
+  <div id="shop">
+    <input type="text" />
+    <router-link to="/">확인</router-link>
+  </div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style>
+<style scoped>
 #shop {
   width: 100%;
   height: 100%;
