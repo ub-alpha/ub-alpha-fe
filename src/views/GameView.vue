@@ -28,7 +28,9 @@ export default {
   mounted() {
     const token = localStorage.getItem("access_token");
     if (token) {
-      this.$store.dispatch("GET_MEMBER");
+      this.$store.dispatch("GET_MEMBER").then(() => {
+        this.$store.dispatch("GET_PLANETS");
+      });
     }
   },
 };

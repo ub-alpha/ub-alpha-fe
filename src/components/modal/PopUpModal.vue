@@ -31,9 +31,15 @@ export default {
   components: {ConfrimBtn},
   methods: {
     makePlanet() {
-      $("#popUpModal").modal("hide");
-      $("#longModalDepth-add").modal("hide");
-      // todo - 행성 생성 api호출
+      const payload = {
+        planet: this.selectedSpace.id,
+        character: this.selectedReward.id,
+      };
+      this.$store.dispatch("ADD_PLANET", payload).then(() => {
+        $("#popUpModal").modal("hide");
+        $("#longModalDepth-add").modal("hide");
+        this.$router.go();
+      });
     },
   },
 };

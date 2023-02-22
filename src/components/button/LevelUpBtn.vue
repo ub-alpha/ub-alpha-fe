@@ -1,6 +1,6 @@
 <template>
   <button
-    v-if="planet.nowPoint != planet.maxPoint"
+    v-if="planet.point != planet.max_point"
     class="level-up-wrap"
     @click="levelUpSpace"
   >
@@ -23,7 +23,7 @@ export default {
 
   methods: {
     levelUpSpace() {
-      this.$store.dispatch("ADD_POINT", this.planet.planet_id);
+      this.$store.dispatch("ADD_POINT", this.planet.id).then(() => {});
     },
   },
 };

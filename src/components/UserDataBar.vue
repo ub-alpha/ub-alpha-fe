@@ -13,7 +13,7 @@
     </div>
 
     <router-link to="/mission" class="item">
-      <strong class="point">{{ pointNum }}</strong>
+      <div class="point">{{ pointNum }}</div>
       <img class="point" :src="require('@/assets/point.svg')" alt="포인트" />
     </router-link>
   </div>
@@ -54,7 +54,10 @@ strong {
 span {
   font-size: 1rem;
 }
-strong.point {
+div.point {
+  font-weight: 700;
+  font-size: 2rem;
+  display: block;
   color: var(--point);
 }
 

@@ -1,10 +1,10 @@
 <template>
   <div :class="`planet ${index === 0 ? `active` : ''} carousel-item`">
     <div
-      :class="`circle-wrap ${planet.nowPoint == planet.maxPoint ? 'max' : ''}`"
+      :class="`circle-wrap ${planet.point == planet.max_point ? 'max' : ''}`"
     >
-      <template v-if="planet.nowPoint != planet.maxPoint">
-        <div class="point-num">{{ planet.nowPoint }}/{{ planet.maxPoint }}</div>
+      <template v-if="planet.point != planet.max_point">
+        <div class="point-num">{{ planet.point }}/{{ planet.max_point }}</div>
       </template>
       <template v-else>
         <div class="point-num">MAX</div>
@@ -16,12 +16,12 @@
         empty-color="#394F7D"
         :thickness="border"
         :empty-thickness="`${border}`"
-        :progress="(planet.nowPoint / planet.maxPoint) * 100"
+        :progress="(planet.point / planet.max_point) * 100"
         :size="stateBarWidth"
       >
         <img
           class="space-img"
-          :src="require('@/assets/space-type-1.png')"
+          :src="require(`@/assets/${planet.planet_img}`)"
           alt="행성 이미지"
         />
       </ve-progress>
@@ -32,7 +32,7 @@
       data-bs-toggle="modal"
       data-bs-target="#slideUpModal"
       @click="exchange"
-      v-if="planet.nowPoint == planet.maxPoint"
+      v-if="planet.point == planet.max_point"
       class="exchange"
     >
       교환하기
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     exchange() {
-      const targetId = this.planet.planet_id;
+      const targetId = this.planet.id;
     },
   },
 };
