@@ -1,19 +1,21 @@
 <template>
-  <point-help-modal></point-help-modal>
-  <point-title-bar></point-title-bar>
-  <div class="scroll content">
-    <mission-category :category="welcomeMission"></mission-category>
-    <ul>
-      <li v-for="mission in welcome" :key="mission.id">
-        <point-mission :mission="mission"></point-mission>
-      </li>
-    </ul>
-    <mission-category :category="dailyMission"></mission-category>
-    <ul>
-      <li v-for="mission in daily" :key="mission.id">
-        <point-mission :mission="mission"></point-mission>
-      </li>
-    </ul>
+  <div id="point">
+    <point-help-modal></point-help-modal>
+    <point-title-bar></point-title-bar>
+    <div class="scroll content">
+      <mission-category :category="welcomeMission"></mission-category>
+      <ul>
+        <li v-for="mission in welcome" :key="mission.id">
+          <point-mission :mission="mission"></point-mission>
+        </li>
+      </ul>
+      <mission-category :category="dailyMission"></mission-category>
+      <ul>
+        <li v-for="mission in daily" :key="mission.id">
+          <point-mission :mission="mission"></point-mission>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -50,6 +52,11 @@ export default {
 </script>
 
 <style scoped>
+#point {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 .content {
   height: 45rem;
 }

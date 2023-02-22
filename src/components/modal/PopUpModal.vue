@@ -49,7 +49,7 @@ export default {
 .modal-dialog {
   width: 100%;
   height: 100%;
-  margin: 0px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,10 +57,10 @@ export default {
 .modal-content {
   width: fit-content;
   text-align: center;
-
-  border-radius: 20px;
+  padding: 0 0.5rem;
+  border-radius: 2rem;
   background-color: var(--backGround);
-  border: 2px solid var(--modal-yellow);
+  border: 0.2rem solid var(--modal-yellow);
   box-sizing: content-box;
 }
 
@@ -71,18 +71,23 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin: 40px 26px;
+  margin: 4rem 2.6rem;
 }
 .modal-body .text {
   font-weight: 700;
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
   color: var(--text-white);
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 
 .modal-body .btnList {
   display: flex;
-  gap: 20px;
+  gap: 2rem;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 100%;
+  }
 }
 </style>

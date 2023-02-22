@@ -35,7 +35,7 @@ button {
 }
 
 .border {
-  border: 1px solid var(--mainColor);
+  border: 0.1rem solid var(--mainColor);
   color: var(--mainColor);
 }
 </style>

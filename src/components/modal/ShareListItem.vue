@@ -23,7 +23,7 @@ export default {
 .socialItem img {
   width: 4.2rem;
   display: block;
-  margin: 0 auto 3px;
+  margin: 0 auto 0.3rem;
 }
 .socialItem strong {
   font-weight: 700;

@@ -2,8 +2,20 @@
   <div id="login">
     <h1>아이디 로그인</h1>
     <div class="login-form">
-      <input id="username" placeholder="아이디" class="borderless-input" v-model="username">
-      <input id="password" placeholder="비밀번호" class="borderless-input" type="password" v-model="password" @keyup.enter="login">
+      <input
+        id="username"
+        placeholder="아이디"
+        class="borderless-input"
+        v-model="username"
+      />
+      <input
+        id="password"
+        placeholder="비밀번호"
+        class="borderless-input"
+        type="password"
+        v-model="password"
+        @keyup.enter="login"
+      />
       <button @click="login">로그인</button>
     </div>
   </div>
@@ -24,8 +36,8 @@ export default {
           localStorage.setItem("access_token", res.access);
           this.$router.push("/");
         }
-        this.username = ""
-        this.password = ""
+        this.username = "";
+        this.password = "";
       });
     },
   },
@@ -50,7 +62,7 @@ h1 {
 button {
   color: var(--text-white);
   background-color: var(--mainColor);
-  padding: 0.5rem 4.1rem;
+  padding: 0.8rem 4.1rem;
   text-align: center;
   border-radius: 2rem;
   font-weight: 400;
@@ -68,10 +80,10 @@ button {
 .borderless-input {
   border: none;
   background: none;
-  border-bottom: 1.3px solid var(--text-grey);
+  border-bottom: 0.13rem solid var(--text-grey);
   outline: none;
   margin: 2rem 0;
-  font-size: 13px;
+  font-size: 1.3rem;
 }
 
 .borderless-input:focus {

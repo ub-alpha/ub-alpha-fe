@@ -18,12 +18,12 @@ export default {
 
 <style scoped>
 button {
-  padding: 4px 18.5px;
-  font-size: 12px;
+  padding: 0.4rem 1.85rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  border-radius: 10px;
+  border-radius: 1rem;
   box-sizing: content-box;
-  line-height: 17px;
+  line-height: 1.7rem;
 }
 .confirm {
   background: var(--point);
