@@ -9,6 +9,7 @@ import {
   add_new_planet,
   add_planet_point,
   get_mission,
+  exchange_planet,
 } from "../api/index.js";
 export default createStore({
   state: {
@@ -81,6 +82,7 @@ export default createStore({
     async GET_PLANETS(context) {
       return get_member_planets().then((res) => {
         context.commit("SET_PLANETS", res);
+        return res;
       });
     },
     // -스페이스 이름 설정
