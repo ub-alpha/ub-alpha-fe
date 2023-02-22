@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+    <button @click="gotoMydata" class="mydata-btn">    </button>
     <button @click="gotoGame()" class="space-btn">
       <img src="@/assets/planet_icon.png" alt="행성 아이콘" />
       <strong>나만의 행성</strong>
@@ -29,6 +30,9 @@ export default {
         this.$router.push("/login");
       }
     },
+    gotoMydata() {
+      this.$router.push("/mydata");
+    }
   },
   created() {
     const token = localStorage.getItem("access_token");
@@ -75,5 +79,26 @@ export default {
 }
 .space-btn img {
   width: 1rem;
+}
+
+.mydata-btn {
+  width: calc(90 * 100% / 320);
+  position: absolute;
+  right: 10rem;
+  top: calc(39% + 0.2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-decoration: none;
+
+  padding-top: calc(14 / 320 * 100%);
+  padding-bottom: calc(14 / 320 * 100%);
+  padding-right: calc(9 / 320 * 100%);
+  padding-left: calc(9 / 320 * 100%);
+
+  background-color: transparent;
+
+  border-radius: 1rem;
 }
 </style>

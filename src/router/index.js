@@ -5,6 +5,7 @@ import GameView from "@/views/GameView.vue";
 import PointMissionView from "@/views/PointMissionView.vue";
 import ShopView from "@/views/ShopView.vue";
 import LoginView from "@/views/LoginView.vue";
+import MydataView from "@/views/MydataView.vue";
 const routes = [
   {
     path: "/",
@@ -35,6 +36,11 @@ const routes = [
     path: "/shop",
     name: "shop",
     component: ShopView,
+  },
+  {
+    path: "/mydata",
+    name: "mydata",
+    component: MydataView,
   },
 ];
 
