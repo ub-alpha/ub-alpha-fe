@@ -6,9 +6,10 @@
           <img :src="require('@/assets/planet_icon.png')" alt="행성 아이콘" />
           <span>행성을 할인권으로 교환하세요!</span>
         </div>
+
         <img
           class="coupon"
-          :src="require('@/assets/discount3000.png')"
+          :src="require(`@/assets/${targetImg ? targetImg : '100.png'}`)"
           alt="금융투자상품권 3000원 할인권"
         />
         <ExChangeBtn @click="nextStep">교환하기</ExChangeBtn>
@@ -33,17 +34,29 @@
 
 <script>
 import SlideUpModal from "@/components/modal/SlideUpModal.vue";
-import ExChangeBtn from "./button/ExChangeBtn.vue";
+import ExChangeBtn from "@/components/button/ExChangeBtn.vue";
 export default {
   data() {
     return {
       step: 1,
+      coupon: "",
     };
+  },
+  computed: {
+    targetId() {
+      return this.$store.state.targetId;
+    },
+    targetImg() {
+      return this.$store.state.targetImg;
+    },
   },
   components: {SlideUpModal, ExChangeBtn},
   methods: {
     nextStep() {
-      this.step = 2;
+      this.$store.dispatch("EXCHANGE_PLANET", this.targetId).then((res) => {
+        this.step = 2;
+        this.coupon = res.coupon;
+      });
     },
     gotoShop() {
       $("#slideUpModal").modal("hide");
