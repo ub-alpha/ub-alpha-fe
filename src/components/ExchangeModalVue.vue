@@ -23,8 +23,8 @@
         </div>
         <div class="codeNum">
           <span>할인권 번호:</span>
-          <span>GNYNNGP</span>
-          <span class="under">복사하기</span>
+          <input disabled type="text" id="code" :value="coupon" />
+          <span @click="copyText" class="under">복사하기</span>
         </div>
         <ExChangeBtn @click="gotoShop"> 상품권 구매히기 </ExChangeBtn>
       </div>
@@ -53,14 +53,21 @@ export default {
   components: {SlideUpModal, ExChangeBtn},
   methods: {
     nextStep() {
+      // this.step = 2;
       this.$store.dispatch("EXCHANGE_PLANET", this.targetId).then((res) => {
         this.step = 2;
+        console.log(res);
         this.coupon = res.coupon;
       });
     },
     gotoShop() {
       $("#slideUpModal").modal("hide");
       this.$router.push("/shop");
+    },
+    copyText() {
+      window.navigator.clipboard.writeText(code.value).then(() => {
+        alert(`쿠폰 번호  : ${code.value} 복사되었습니다`);
+      });
     },
   },
 };
@@ -108,5 +115,11 @@ export default {
 }
 .content.step-2 .codeNum .under {
   text-decoration: underline;
+}
+.content.step-2 .codeNum #code {
+  width: 30%;
+  background-color: transparent;
+  flex-grow: 0;
+  border: none;
 }
 </style>

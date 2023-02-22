@@ -209,6 +209,9 @@ export default {
 }
 .reward-list .item .origin {
   margin-right: 1.4rem;
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 0.2rem;
 }
 .reward-list .item img {
   width: calc(200 / 320 * 100%);

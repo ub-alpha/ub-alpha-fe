@@ -32,10 +32,11 @@
       data-bs-toggle="modal"
       data-bs-target="#slideUpModal"
       v-if="planet.point == planet.max_point"
-      class="exchange"
+      :class="`exchange ${planet.status === 'used' ? 'used' : ''}`"
       @click="saveTargetId"
+      :disabled="planet.status === 'used'"
     >
-      교환하기
+      {{ planet.status == "used" ? "교환완료" : "교환하기" }}
     </button>
   </div>
 </template>
@@ -131,5 +132,9 @@ export default {
   color: var(--backGround);
   border-radius: 1rem;
   background-color: var(--point);
+}
+.exchange.used {
+  background-color: var(--backGround);
+  color: var(--modal-white);
 }
 </style>
