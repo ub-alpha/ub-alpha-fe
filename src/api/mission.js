@@ -14,17 +14,18 @@ export async function get_mission() {
 
 // POST 미션을 수행함 /mission/log
 
-export async function try_mission() {
-  // {
-  //     "mission": 1,
-  // }
+export async function try_mission(mission_id) {
+  const missionData = {
+    mission: mission_id
+  }
   const {data} = await axios({
     url: `${process.env.VUE_APP_API_URL}/mission/log`,
     method: "POST",
     headers: {
       Authorization: `JWT ${localStorage.getItem("access_token")}`,
+      "Content-type": "application/json",
     },
-    data: {},
+    data: JSON.stringify(missionData),
   });
   return data;
 }

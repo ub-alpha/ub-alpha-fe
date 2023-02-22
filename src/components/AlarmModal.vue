@@ -1,7 +1,7 @@
 <template>
     <div class="modal fade" id="popUpModalTmp" tabindex="-1" aria-labelledby="popUpModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" @click="getPoint">
                 <div class="modal-body">
                     <div class="modal-top">
                         <img class="point" :src="require('@/assets/point.svg')" alt="포인트" />
@@ -15,18 +15,19 @@
 </template>
   
 <script>
-import ConfrimBtn from "@/components/button/ConfrimBtn.vue";
+import {try_mission} from "@/api/mission.js"
 export default {
-    props: ["selectedSpace", "selectedReward"],
-    components: { ConfrimBtn },
     methods: {
-        makePlanet() {
-            $("#popUpModal").modal("hide");
-            $("#longModalDepth-add").modal("hide");
-            // todo - 행성 생성 api호출
-        },
+        getPoint() {
+            try_mission(1).then((res) => {
+                $("#popUpModalTmp").modal("hide");
+                this.$router.push("/mission");
+            });
+        }
     },
-
+    mounted() {
+    $("#popUpModalTmp").modal("show");
+  },
 };
 </script>
   
@@ -68,7 +69,7 @@ export default {
 }
 
 .modal-body .title {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.3rem;
     line-height: 1.9rem;
     text-align: center;
@@ -76,7 +77,8 @@ export default {
 }
 
 .modal-body .content {
-    font-weight: 700;
+    margin-top: 0.5rem;
+    font-weight: 600;
     font-size: 1.6rem;
     color: var(--text-white);
     padding-left: 1.5rem;
