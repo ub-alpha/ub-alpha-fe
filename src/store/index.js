@@ -10,6 +10,7 @@ import {
   add_planet_point,
   get_mission,
   exchange_planet,
+  get_point,
 } from "../api/index.js";
 export default createStore({
   state: {
@@ -125,6 +126,12 @@ export default createStore({
     // 교환권 교환
     async EXCHANGE_PLANET(context, id) {
       return exchange_planet(id).then((res) => {
+        return res;
+      });
+    },
+    // 미션 수행 완료
+    async DONE_MISSION(context, id) {
+      return get_point(id).then((res) => {
         return res;
       });
     },
