@@ -4,13 +4,13 @@
     <div class="scroll content">
         <mission-category :category="welcomeMission"></mission-category>
         <ul>
-            <li v-for="mission in welcome">
+            <li v-for="mission in welcome" :key="mission.id">
                 <point-mission :mission="mission"></point-mission>
             </li>
         </ul>
         <mission-category :category="dailyMission"></mission-category>
         <ul>
-            <li v-for="mission in daily">
+            <li v-for="mission in daily" :key="mission.id">
                 <point-mission :mission="mission"></point-mission>
             </li>
         </ul>
@@ -22,81 +22,12 @@ import PointTitleBar from '@/components/PointTitleBar.vue';
 import MissionCategory from '@/components/MissionCategory.vue';
 import PointMission from '@/components/PointMission.vue';
 import PointHelpModal from '@/components/PointHelpModal.vue';
+import { get_mission } from '@/api/mission.js';
 export default {
     data() {
         return {
-            welcome: [{
-                point: 10,
-                mission: "계좌 개설",
-                status: "notready",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "ready",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            ],
-            daily: [{
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            {
-                point: 10,
-                mission: "계좌 개설",
-                status: "done",
-            },
-            ],
+            welcome: [],
+            daily: [],
             dailyMission: "데일리 미션",
             welcomeMission: "웰컴 미션",
         };
@@ -106,6 +37,12 @@ export default {
         MissionCategory,
         PointMission,
         PointHelpModal,
+    },
+    mounted() {
+        get_mission().then((res) => {
+            this.welcome = res.filter(mission => mission.category === "welcome");
+            this.daily = res.filter(mission => mission.category === "daily");
+        })
     }
 };
 </script>
