@@ -1,5 +1,6 @@
 <template>
   <button
+    id="levelUpBtn"
     v-if="planet.point != planet.max_point"
     class="level-up-wrap"
     @click="levelUpSpace"

@@ -1,5 +1,5 @@
 <template>
-  <div class="socialItem">
+  <div class="socialItem" @click="shareCapture">
     <img
       :src="require(`@/assets/${socialName}.svg`)"
       :alt="`${socialName} 공유하기`"
@@ -9,8 +9,37 @@
 </template>
 
 <script>
+import html2canvas from "html2canvas";
 export default {
-  props: ["socialName"],
+  props: ["socialName", "capture"],
+  data() {
+    return {
+      output: "",
+    };
+  },
+  methods: {
+    shareCapture() {
+      $("#socialModal").modal("hide");
+      $("#levelUpBtn").css("display", "none");
+      setTimeout(() => {
+        html2canvas(
+          document.querySelector(".planet.carousel-item.active")
+        ).then((canvas) => {
+          $("#levelUpBtn").css("display", "flex");
+          const imgData = canvas.toDataURL("image/jpeg");
+          if (this.socialName === "이미지저장") {
+            this.saveImg(imgData);
+          }
+        });
+      }, 1);
+    },
+    saveImg(imgData) {
+      let el = document.createElement("a");
+      el.href = imgData;
+      el.download = "my-solar.jpeg"; //다운로드 할 파일명 설정
+      el.click();
+    },
+  },
 };
 </script>
 
