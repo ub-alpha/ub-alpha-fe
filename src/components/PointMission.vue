@@ -22,7 +22,7 @@ export default {
         this.$router.push('/');
       } else if (this.mission.status === "ready") {
         this.$store.dispatch("DONE_MISSION", this.mission.log_id).then((res) => {
-          this.$router.go()
+          this.$router.push('/mission');
         })
       }
     }
