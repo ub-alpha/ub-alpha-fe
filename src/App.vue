@@ -7,7 +7,7 @@
 <script>
 import DeviceStatusBar from "@/components/DeviceStatusBar.vue";
 export default {
-  components: { DeviceStatusBar },
+  components: {DeviceStatusBar},
 };
 </script>
 <style>
@@ -15,5 +15,7 @@ export default {
 #main {
   height: 100%;
   flex-grow: 1;
+  background: no-repeat top url("@/assets/background-image.png");
+  background-size: cover;
 }
 </style>

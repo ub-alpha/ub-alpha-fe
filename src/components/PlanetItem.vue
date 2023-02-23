@@ -38,6 +38,7 @@
     >
       {{ planet.status == "used" ? "교환완료" : "교환하기" }}
     </button>
+    <img class="bgimg" :src="require('@/assets/background-image.png')" alt="" />
   </div>
 </template>
 
@@ -79,10 +80,19 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: var(--backGround);
+}
+.carousel-item .bgimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: -10;
 }
 
 .circle-wrap {
+  z-index: 30;
   display: flex;
   align-items: center;
   justify-content: center;
