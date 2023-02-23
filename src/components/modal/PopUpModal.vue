@@ -39,15 +39,8 @@ export default {
       this.$store.dispatch("ADD_PLANET", payload).then(() => {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
-        console.log("reload");
-        // this.$store.dispatch("GET_PLANET_LIST");
       });
-
-      // .then(() => {
-
-      //   $("#popUpModal").modal("hide");
-      //   $("#longModalDepth-add").modal("hide");
-      // });
+      this.$router.push("/game");
     },
   },
 };
