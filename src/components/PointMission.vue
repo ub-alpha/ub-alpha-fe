@@ -24,7 +24,9 @@ export default {
         this.$store
           .dispatch("DONE_MISSION", this.mission.log_id)
           .then((res) => {
-            this.$router.go(0);
+            this.$router.push(
+              `/mission?page=${this.$store.state.planets.length}`
+            );
           });
       }
     },
