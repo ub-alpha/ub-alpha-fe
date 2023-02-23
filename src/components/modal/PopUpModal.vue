@@ -41,8 +41,8 @@ export default {
       this.$store.dispatch("ADD_PLANET", payload).then(() => {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
-        console.log("test");
-        this.$router.push("/game");
+        console.log("test", this.$store.state.planets.length);
+        this.$router.push(`/game?page=${this.$store.state.planets.length}`);
       });
       // this.$router.push("/game");
     },
