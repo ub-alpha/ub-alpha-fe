@@ -1,12 +1,7 @@
 import axios from "axios";
 
 // POST 로그인 함수 /token
-export async function login() {
-  const userData = {
-    username: "username",
-    password: "password",
-  };
-
+export async function login(userData) {
   const {data} = await axios({
     url: `${process.env.VUE_APP_API_URL}/token`,
     method: "POST",

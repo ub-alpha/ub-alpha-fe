@@ -31,7 +31,11 @@ export default {
   },
   methods: {
     login() {
-      this.$store.dispatch("GET_TOKEN").then((res) => {
+      const data = {
+        username: this.username,
+        password: this.password,
+      };
+      this.$store.dispatch("GET_TOKEN", data).then((res) => {
         if (res) {
           localStorage.setItem("access_token", res.access);
           this.$router.push("/");

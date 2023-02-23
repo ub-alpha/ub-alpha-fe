@@ -69,8 +69,8 @@ export default createStore({
       context.commit("SET_TARGET_ID", data);
     },
     // -로그인
-    async GET_TOKEN(context) {
-      return login();
+    async GET_TOKEN(context, data) {
+      return login(data);
     },
     // -사용자 프로필 반환
     async GET_MEMBER(context) {
