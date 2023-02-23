@@ -42,7 +42,7 @@ export default {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
         console.log("test");
-        this.$router.go();
+        this.$router.push("/game");
       });
       // this.$router.push("/game");
     },
