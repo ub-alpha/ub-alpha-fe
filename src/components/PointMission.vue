@@ -18,15 +18,17 @@ export default {
   components: {OnOffBtn},
   methods: {
     doMission() {
-      if (this.mission.status === "notready"){
-        this.$router.push('/');
+      if (this.mission.status === "notready") {
+        this.$router.push("/");
       } else if (this.mission.status === "ready") {
-        this.$store.dispatch("DONE_MISSION", this.mission.log_id).then((res) => {
-          this.$router.push('/mission');
-        })
+        this.$store
+          .dispatch("DONE_MISSION", this.mission.log_id)
+          .then((res) => {
+            this.$router.go("/mission");
+          });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

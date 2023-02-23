@@ -24,7 +24,6 @@
         <div class="codeNum">
           <span>할인권 번호:</span>
           <input disabled type="text" id="code" :value="coupon" />
-          <span @click="copyText" class="under">복사하기</span>
         </div>
         <ExChangeBtn @click="gotoShop"> 상품권 구매히기 </ExChangeBtn>
       </div>
@@ -99,7 +98,7 @@ export default {
   width: calc(150 / 320 * 100%);
 }
 .content.step-2 .codeNum {
-  width: calc(245 / 320 * 100%);
+  width: calc(175 / 320 * 100%);
   padding: 1.3rem;
   display: flex;
   align-items: center;
