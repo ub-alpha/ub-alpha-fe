@@ -39,8 +39,9 @@ export default {
       this.$store.dispatch("ADD_PLANET", payload).then(() => {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
+        this.$router.go(this.$router.currentRoute)
       });
-      this.$router.push("/game");
+      // this.$router.push("/game");
     },
   },
 };
