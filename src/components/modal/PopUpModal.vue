@@ -37,14 +37,14 @@ export default {
         planet: this.selectedSpace.id,
         character: this.selectedReward.id,
       };
+      $("#popUpModal").modal("hide");
+      $("#longModalDepth-add").modal("hide");
 
       this.$store.dispatch("ADD_PLANET", payload).then(() => {
-        $("#popUpModal").modal("hide");
-        $("#longModalDepth-add").modal("hide");
+        $();
         console.log("test", this.$store.state.planets.length);
         this.$router.push(`/game?page=${this.$store.state.planets.length}`);
       });
-      // this.$router.push("/game");
     },
   },
 };
