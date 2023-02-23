@@ -1,7 +1,7 @@
 <template>
   <DeviceStatusBar></DeviceStatusBar>
   <div id="main">
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 <script>
