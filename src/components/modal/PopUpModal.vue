@@ -39,9 +39,8 @@ export default {
       this.$store.dispatch("ADD_PLANET", payload).then(() => {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
+        location.reload();
       });
-
-      this.$router.go(0);
 
       // .then(() => {
 
