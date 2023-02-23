@@ -35,11 +35,18 @@ export default {
         planet: this.selectedSpace.id,
         character: this.selectedReward.id,
       };
-      this.$store.dispatch("ADD_PLANET", payload).then(() => {
-        this.$router.go(0);
+
+      this.$store.dispatch("ADD_PLANET", payload).then(function () {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
+        this.$router.go();
       });
+
+      // .then(() => {
+
+      //   $("#popUpModal").modal("hide");
+      //   $("#longModalDepth-add").modal("hide");
+      // });
     },
   },
 };
