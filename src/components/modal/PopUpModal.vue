@@ -36,9 +36,9 @@ export default {
         character: this.selectedReward.id,
       };
       this.$store.dispatch("ADD_PLANET", payload).then(() => {
+        this.$router.go(0);
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
-        this.$router.go(0);
       });
     },
   },
