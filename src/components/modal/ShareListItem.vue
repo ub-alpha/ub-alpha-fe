@@ -36,7 +36,7 @@ export default {
     saveImg(imgData) {
       let el = document.createElement("a");
       el.href = imgData;
-      el.download = "my-solar.jpeg"; //다운로드 할 파일명 설정
+      el.download = "my-solar.jpeg";
       el.click();
     },
   },
