@@ -16,7 +16,9 @@
               data-bs-dismiss="modal"
               aria-label="Close"
             ></ConfrimBtn>
+            <router-link to="/game">
             <ConfrimBtn @click="makePlanet" :btn-msg="'확인'"></ConfrimBtn>
+          </router-link>
           </div>
         </div>
       </div>
