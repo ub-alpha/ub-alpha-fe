@@ -53,10 +53,8 @@ export default {
   components: {SlideUpModal, ExChangeBtn},
   methods: {
     nextStep() {
-      // this.step = 2;
       this.$store.dispatch("EXCHANGE_PLANET", this.targetId).then((res) => {
         this.step = 2;
-        console.log(res);
         this.coupon = res.coupon;
       });
     },
