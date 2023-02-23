@@ -40,9 +40,9 @@ export default {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
       });
-      setTimeout(() => {
-        this.$router.go();
-      }, 10);
+
+      this.$router.go(0);
+
       // .then(() => {
 
       //   $("#popUpModal").modal("hide");
