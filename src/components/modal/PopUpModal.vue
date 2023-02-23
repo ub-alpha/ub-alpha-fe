@@ -17,8 +17,8 @@
               aria-label="Close"
             ></ConfrimBtn>
             <router-link to="/game">
-            <ConfrimBtn @click="makePlanet" :btn-msg="'확인'"></ConfrimBtn>
-          </router-link>
+              <ConfrimBtn @click="makePlanet" :btn-msg="'확인'"></ConfrimBtn>
+            </router-link>
           </div>
         </div>
       </div>
@@ -41,8 +41,8 @@ export default {
       this.$store.dispatch("ADD_PLANET", payload).then(() => {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
-        console.log(this.$router.currentRoute);
-        this.$router.go(this.$router.currentRoute);
+        console.log("test");
+        this.$router.go();
       });
       // this.$router.push("/game");
     },
