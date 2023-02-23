@@ -21,14 +21,15 @@ export default {
     shareCapture() {
       $("#socialModal").modal("hide");
       $("#levelUpBtn").css("display", "none");
+      const captureEl = document.querySelector(".planet.carousel-item.active");
+      $(".carousel-item .bgimg").css("opacity", "1");
       setTimeout(() => {
-        html2canvas(
-          document.querySelector(".planet.carousel-item.active")
-        ).then((canvas) => {
+        html2canvas(captureEl).then((canvas) => {
           $("#levelUpBtn").css("display", "flex");
           const imgData = canvas.toDataURL("image/jpeg");
           if (this.socialName === "이미지저장") {
             this.saveImg(imgData);
+            $(".carousel-item .bgimg").css("opacity", "0");
           }
         });
       }, 1);
