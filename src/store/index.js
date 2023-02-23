@@ -121,6 +121,7 @@ export default createStore({
     async GET_MISSION(context) {
       return get_mission().then((res) => {
         context.commit("SET_MISSIONS", res);
+        return res;
       });
     },
     // 교환권 교환

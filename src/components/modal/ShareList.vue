@@ -48,6 +48,10 @@ export default {
           id: uuid.v1(),
           name: "인스타그램",
         },
+        {
+          id: uuid.v1(),
+          name: "이미지저장",
+        },
       ],
     };
   },
