@@ -36,12 +36,13 @@ export default {
         character: this.selectedReward.id,
       };
 
-      this.$store.dispatch("ADD_PLANET", payload).then(function () {
+      this.$store.dispatch("ADD_PLANET", payload).then(() => {
         $("#popUpModal").modal("hide");
         $("#longModalDepth-add").modal("hide");
-        this.$router.go();
       });
-
+      setTimeout(() => {
+        this.$router.go();
+      }, 10);
       // .then(() => {
 
       //   $("#popUpModal").modal("hide");
