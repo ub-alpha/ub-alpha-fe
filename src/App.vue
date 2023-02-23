@@ -15,7 +15,5 @@ export default {
 #main {
   height: 100%;
   flex-grow: 1;
-  background: no-repeat top url("@/assets/background-image.png");
-  background-size: cover;
 }
 </style>

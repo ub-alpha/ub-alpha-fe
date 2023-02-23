@@ -45,5 +45,7 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
+  background: no-repeat top url("@/assets/background-image.png");
+  background-size: cover;
 }
 </style>

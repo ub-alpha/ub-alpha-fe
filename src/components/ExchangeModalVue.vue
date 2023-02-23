@@ -92,6 +92,7 @@ export default {
   line-height: 1.6rem;
 }
 .content .name img {
+  width: 1.1rem;
   margin-right: 0.6rem;
 }
 .content img.coupon {
